@@ -1,10 +1,11 @@
 import React from 'react';
 import './userInfo.scss';
+import Avatar from './Avatar.jsx';
 
 function UserInfo(props) {
   return (
     <div className='user-info'>
-      <img className='avatar' src={props.user.avatarUrl} alt={props.user.name} />
+      <Avatar user={props.user} />
       <div className='user-info__name'>{props.user.name}</div>
     </div>
   )
