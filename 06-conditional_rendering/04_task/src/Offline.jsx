@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Offline = (props) => {
+const Offline = ({onConnect}) => {
   return (
     <>
       <span className='status__text'>Offline</span>
-      <button className='status__btn'>Reconnect</button>
+      <button className='status__btn' onClick={() => onConnect()}>Reconnect</button>
     </>
   );
 };
