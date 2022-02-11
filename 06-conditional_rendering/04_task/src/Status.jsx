@@ -8,23 +8,17 @@ class Status extends Component {
     super(props);
 
     this.state = {
-      isOnline: props.status,
+      isOnline: props.isOnline,
     };
 
     this.onConnect = this.onConnect.bind(this);
-  }
-
-  onConnect() {
-    this.setState({
-      isOnline: !this.state.isOnline,
-    });
   }
 
   render() {
     return (
       this.state.isOnline 
         ? <Online />
-        : <Offline onConnect={this.onConnect} />
+        : <Offline />
     )
   }
 }
