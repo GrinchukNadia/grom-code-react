@@ -11,24 +11,21 @@ class Status extends Component {
       isOnline: props.status,
     };
 
-    this.onConnect = this.onConnect.bind(this)
+    this.onConnect = this.onConnect.bind(this);
   }
 
   onConnect() {
     this.setState({
-      isOnline: !this.state.isOnline
-    })
+      isOnline: !this.state.isOnline,
+    });
   }
 
   render() {
     return (
-      <div className='status'>
-        {this.state.isOnline 
-          ? (<Online />) 
-          : (<Offline onConnect={this.onConnect} />)
-        }
-      </div>
-    );
+      this.state.isOnline 
+        ? <Online />
+        : <Offline onConnect={this.onConnect} />
+    )
   }
 }
 
