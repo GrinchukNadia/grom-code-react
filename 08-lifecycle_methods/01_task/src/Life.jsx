@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 class NumbersList extends Component {
   constructor(props) {
     super(props);
+
+    console.log('constructor: good place to create state');
   }
 
   componentDidMount() {
@@ -12,8 +14,8 @@ class NumbersList extends Component {
   shouldComponentUpdate() {
     console.log(
       'shouldComponentUpdate(nextProps, nextState): decide to render or not to render'
-      );
-      return true
+    );
+    return true;
   }
 
   componentDidUpdate() {
@@ -29,8 +31,8 @@ class NumbersList extends Component {
   }
 
   render() {
-    console.log('constructor: good place to create state');
-    return null
+    console.log('return React element to build DOM');
+    return null;
   }
 }
 
