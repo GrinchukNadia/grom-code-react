@@ -19,7 +19,7 @@ class Dimensions extends Component {
   }
   
   componentWillUnmount() {
-    window.removeEventListener('risize', this.onResize);
+    window.removeEventListener('resize', this.onResize);
   }
   
   setResize = (width, height) => {
@@ -27,7 +27,7 @@ class Dimensions extends Component {
       width,
       height,
     });
-    
+
     document.title = `${innerWidth} x ${innerHeight}`
   }
 
