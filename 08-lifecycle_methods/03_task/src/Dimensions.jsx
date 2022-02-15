@@ -14,7 +14,6 @@ class Dimensions extends Component {
     window.addEventListener('resize', this.onResize);
 
     const { innerWidth, innerHeight } = window;
-    console.log(innerWidth)
     this.setResize(innerWidth, innerHeight);
   }
   

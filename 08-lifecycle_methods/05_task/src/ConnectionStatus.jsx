@@ -9,21 +9,21 @@ class ConnectionStatus extends Component {
       isOnline: true,
     };
 
-    this.onConnectChange = this.onConnectChange.bind(this)
   }
 
-  onConnectChange() {
-    this.setState({isOnline: !this.state.isOnline });
-  }
-
+  
   componentDidMount() {
     window.addEventListener('online', this.onConnectChange);
     window.addEventListener('offline', this.onConnectChange);
   }
-
+  
   componentWillUnmount() {
     window.removeEventListener('online', this.onConnectChange);
     window.removeEventListener('ofline', this.onConnectChange);
+  }
+
+  onConnectChange = () => {
+    this.setState({isOnline: !this.state.isOnline });
   }
 
   render() {
