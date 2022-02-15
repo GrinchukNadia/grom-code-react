@@ -1,11 +1,27 @@
 .user {
-  margin: 8px;
-  width: 150px;
-  display: flex;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
 
-  &__age {
-    font-weight: 700;
-    opacity: 0.5;
-    margin-left: auto;
-  }
+    &__avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+    }
+
+    &__info {
+        text-align: center;
+        font-size: 24px;
+        margin: 32px;
+    }
+
+    &__name {
+        font-weight: 700;
+    }
+
+    &__location {
+        opacity: 0.5;
+        margin-left: 16px;
+    }
 }
