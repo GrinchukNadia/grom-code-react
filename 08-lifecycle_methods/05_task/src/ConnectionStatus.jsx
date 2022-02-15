@@ -8,30 +8,29 @@ class ConnectionStatus extends Component {
     this.state = {
       isOnline: true,
     };
-
   }
 
   componentDidMount() {
     window.addEventListener('online', this.onConnectChange);
     window.addEventListener('offline', this.onConnectChange);
   }
-  
+
   componentWillUnmount() {
     window.removeEventListener('online', this.onConnectChange);
     window.removeEventListener('offline', this.onConnectChange);
   }
 
   onConnectChange = () => {
-    this.setState({isOnline: !this.state.isOnline });
-  }
+    this.setState({ isOnline: !this.state.isOnline });
+  };
 
   render() {
-    if (!this.state.isOnline) {
-      return <div className='status status_offline'>offline</div>;
-    }
-    if(this.state.isOnline) {
-      return <div className='status'>online</div>;
-    }
+    const isOnline = this.state.isOnline;
+    return (
+      <div className={isOnline ? 'status' : 'status status_offline'}>
+        {isOnline ? 'online' : 'offline'}
+      </div>
+    );
   }
 }
 
