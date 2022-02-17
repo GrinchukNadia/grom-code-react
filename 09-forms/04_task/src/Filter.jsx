@@ -1,25 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './filter.scss';
 
-class Filter extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+const Filter = ({count, onChange, filterText}) => {
     return (
       <div className='filter'>
-        <span className='filter__count'>{this.props.count}</span>
+        <span className='filter__count'>{count}</span>
         <input
           name='filter'
           type='text'
           className='filter__input'
-          onChange={this.props.handleInput}
-          value={this.props.filterText}
+          onChange={onChange}
+          value={filterText}
         />
       </div>
     );
-  }
 }
 
 export default Filter;

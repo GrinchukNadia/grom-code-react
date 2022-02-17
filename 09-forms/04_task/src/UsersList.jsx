@@ -33,7 +33,7 @@ class UsersList extends Component {
         <Filter
           filterText={this.state.filterText}
           count={count}
-          handleInput={this.handleInput}
+          onChange={this.handleInput}
         />
 
         <ul className='users'>
