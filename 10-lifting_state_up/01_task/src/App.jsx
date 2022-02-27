@@ -15,7 +15,7 @@ class App extends Component {
   componentDidMount() {
     fetch(`https://api.github.com/users/${this.props.name}`)
       .then(response => response.json())
-      .then(user => this.setState({user}))
+      .then(userData => this.setState({userData}))
   }
 
   render() {
