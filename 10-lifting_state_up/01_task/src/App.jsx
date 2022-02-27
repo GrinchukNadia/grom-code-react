@@ -8,12 +8,11 @@ class App extends Component {
     super(props);
 
     this.state = {
-      user: null
+      userData: null
     };
   }
 
   componentDidMount() {
-    console.log(this.props.name)
     fetch(`https://api.github.com/users/${this.props.name}`)
       .then(response => response.json())
       .then(user => this.setState({user}))
@@ -23,9 +22,9 @@ class App extends Component {
     return (
       <div className='page'>
         <header className='header'>
-          <UserMenu userData={this.state.user} />
+          <UserMenu userData={this.state.userData} />
         </header>
-        <UserProfile userData={this.state.user} />
+        <UserProfile userData={this.state.userData} />
       </div>
     );
   }
