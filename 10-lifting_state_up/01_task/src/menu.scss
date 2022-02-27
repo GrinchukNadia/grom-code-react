@@ -1,0 +1,16 @@
+.menu {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    &__greeting {
+        opacity: 0.5;
+    }
+
+    &__avatar {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        margin-left: 16px;
+    }
+}
