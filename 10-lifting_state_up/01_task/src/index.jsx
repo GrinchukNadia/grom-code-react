@@ -4,4 +4,4 @@ import App from './App.jsx';
 import './index.scss';
 
 const rootElem = document.querySelector('#root');
-ReactDOM.render(<App name='GitHub' />, rootElem);
+ReactDOM.render(<App userId='GitHub' />, rootElem);

@@ -13,7 +13,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(`https://api.github.com/users/${this.props.name}`)
+    this.fetchUserData(this.props.userId)
+  }
+  
+  fetchUserData = userId => {
+    fetch(`https://api.github.com/users/${userId}`)
       .then(response => response.json())
       .then(userData => this.setState({userData}))
   }
