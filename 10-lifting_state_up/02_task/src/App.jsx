@@ -19,7 +19,6 @@ class App extends Component {
 
   onFormChange(event) {
     const { name, value } = event.target;
-    console.log(this.state)
 
     this.setState({
       userData: {
@@ -32,11 +31,9 @@ class App extends Component {
   render() {
     return (
       <div className='page'>
-        <h1 className='title'>{`Hello, ${this.state.userData.firstName}`}</h1>
+        <h1 className='title'>{`Hello, ${this.state.userData.firstName} ${this.state.userData.lastName}`}</h1>
         <main className='content'>
-          <ShoppingCart
-            userData={this.state.userData}
-          />
+          <ShoppingCart userData={this.state.userData} />
           <Profile
             userData={this.state.userData}
             onFormChange={this.onFormChange}
