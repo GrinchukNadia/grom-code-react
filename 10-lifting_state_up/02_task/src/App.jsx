@@ -8,18 +8,6 @@ class App extends Component {
     super(props);
 
     this.state = {
-      cartItems: [
-        {
-          id: '1',
-          name: 'iPhone 11',
-          price: 999,
-        },
-        {
-          id: '2',
-          name: 'iPad Pro',
-          price: 799,
-        },
-      ],
       userData: {
         firstName: 'John',
         lastName: 'Doe',
@@ -31,10 +19,11 @@ class App extends Component {
 
   onFormChange(event) {
     const { name, value } = event.target;
+    console.log(this.state)
 
     this.setState({
-      ...this.state,
       userData: {
+        ...this.state.userData,
         [name]: value
       }
     });
@@ -46,7 +35,6 @@ class App extends Component {
         <h1 className='title'>{`Hello, ${this.state.userData.firstName}`}</h1>
         <main className='content'>
           <ShoppingCart
-            cartItems={this.state.cartItems}
             userData={this.state.userData}
           />
           <Profile
