@@ -1,8 +1,8 @@
 import React from 'react';
-import './productList.scss';
+import './productsList.scss';
 
-const ProductList = ({cartItems}) => {
-  const cartItemsElements = cartItems.map(({id, name, price}) => {
+const ProductsList = ({ cartItems }) => {
+  const cartItemsElements = cartItems.map(({ id, name, price }) => {
     return (
       <li key={id} className='products__list-item'>
         <span className='products__item-name'>{name}</span>
@@ -10,7 +10,7 @@ const ProductList = ({cartItems}) => {
       </li>
     );
   });
-  const totalPrice = cartItems.reduce((acc, {price}) => acc + price, 0);
+  const totalPrice = cartItems.reduce((acc, { price }) => acc + price, 0);
 
   return (
     <div className='products'>
@@ -20,4 +20,4 @@ const ProductList = ({cartItems}) => {
   );
 };
 
-export default ProductList;
+export default ProductsList;
