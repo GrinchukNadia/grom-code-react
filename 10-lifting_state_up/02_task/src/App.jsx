@@ -14,7 +14,7 @@ class App extends Component {
       },
     };
 
-    this.onFormChange = this.onFormChange.bind(this)
+    this.onFormChange = this.onFormChange.bind(this);
   }
 
   onFormChange(event) {
@@ -23,8 +23,8 @@ class App extends Component {
     this.setState({
       userData: {
         ...this.state.userData,
-        [name]: value
-      }
+        [name]: value,
+      },
     });
   }
 
@@ -33,7 +33,9 @@ class App extends Component {
       <div className='page'>
         <h1 className='title'>{`Hello, ${this.state.userData.firstName} ${this.state.userData.lastName}`}</h1>
         <main className='content'>
-          <ShoppingCart userData={this.state.userData} />
+          <div className='column'>
+            <ShoppingCart userData={this.state.userData} />
+          </div>
           <Profile
             userData={this.state.userData}
             onFormChange={this.onFormChange}
