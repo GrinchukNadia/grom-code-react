@@ -21,8 +21,8 @@ class App extends Component {
 
   render() {
     return (
-      <div class='app'>
-        <button class='btn' onClick={this.showDialog}>
+      <div className='app'>
+        <button className='btn' onClick={this.showDialog}>
           Show dialog
         </button>
         <Dialog
@@ -30,10 +30,7 @@ class App extends Component {
           title={'Recommendation'}
           isOpen={this.state.isOpen}
         >
-          <p>
-            Use immutable array methods to work with data. It will help to avoid
-            bugs
-          </p>
+          <p>Use immutable array methods to work with data. It will help to avoid bugs</p>
         </Dialog>
       </div>
     );
