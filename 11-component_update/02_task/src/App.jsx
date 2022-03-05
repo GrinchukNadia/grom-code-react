@@ -11,20 +11,26 @@ class App extends Component {
     };
   }
 
-  onClose = () => {
+  hideDialog = () => {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: false
+    })
+  }
+
+  showDialog = () => {
+    this.setState({
+      isOpen: true
     })
   }
 
   render() {
     return (
       <div class='app'>
-        <button class='btn' onClick={() => this.onClose()}>
+        <button class='btn' onClick={this.showDialog}>
           Show dialog
         </button>
         <Dialog
-          onClose={this.onClose}
+          onClose={this.hideDialog}
           title={'Recommendation'}
           isOpen={this.state.isOpen}
         >
