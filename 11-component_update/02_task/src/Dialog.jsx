@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Numbers = ({ children, isOpen, title, onClose }) => {
+const Dialog = ({ children, isOpen, title, onClose }) => {
   if(!isOpen) {
     return null
   }
@@ -16,4 +16,4 @@ const Numbers = ({ children, isOpen, title, onClose }) => {
   );
 };
 
-export default Numbers;
+export default Dialog;
