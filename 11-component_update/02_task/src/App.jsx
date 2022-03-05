@@ -3,25 +3,21 @@ import './index.scss';
 import Dialog from './Dialog.jsx';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isOpen: false
-    };
-  }
+  state = {
+    isOpen: false,
+  };
 
   hideDialog = () => {
     this.setState({
-      isOpen: false
-    })
-  }
+      isOpen: false,
+    });
+  };
 
   showDialog = () => {
     this.setState({
-      isOpen: true
-    })
-  }
+      isOpen: true,
+    });
+  };
 
   render() {
     return (
