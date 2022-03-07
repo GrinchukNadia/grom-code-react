@@ -4,12 +4,12 @@ import Expand from './Expand.jsx';
 
 class App extends Component {
   state = {
-    isWisible: false,
+    isWisible: '',
   };
 
   onHide = () => {
     this.setState({
-      isWisible: !this.state.isWisible,
+      isWisible: this.state.isWisible ? false : true,
     });
   };
 

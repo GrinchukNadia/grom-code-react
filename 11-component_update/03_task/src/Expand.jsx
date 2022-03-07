@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 const Expand = ({ children, onHide, isWisible, title }) => {
   return (
@@ -16,5 +17,13 @@ const Expand = ({ children, onHide, isWisible, title }) => {
     </div>
   );
 };
+
+Expand.propTypes = {
+  isWisible: PropTypes.bool
+}
+
+Expand.defaultProps = {
+  isWisible: false
+}
 
 export default Expand;
