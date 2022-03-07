@@ -9,7 +9,7 @@ class App extends Component {
 
   onHide = () => {
     this.setState({
-      isWisible: this.state.isWisible ? false : true,
+      isWisible: !this.state.isWisible,
     });
   };
 
@@ -21,10 +21,12 @@ class App extends Component {
           isWisible={this.state.isWisible}
           title={'Some title'}
         >
-          <p>
-            Hooks are a new addition in React 16.8. They let you use state and
-            other React features without writing a class.
-          </p>
+          {this.state.isWisible ? (
+            <p>
+              Hooks are a new addition in React 16.8. They let you use state and
+              other React features without writing a class.
+            </p>
+          ) : null}
         </Expand>
       </div>
     );
