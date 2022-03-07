@@ -22,13 +22,10 @@ class App extends Component {
           title={'Some title'}
         >
           {this.state.isWisible ? (
-            <div className='expand__content'>
-              {' '}
-              <p>
-                Hooks are a new addition in React 16.8. They let you use state
-                and other React features without writing a class.
-              </p>
-            </div>
+            <p>
+              Hooks are a new addition in React 16.8. They let you use state and
+              other React features without writing a class.
+            </p>
           ) : null}
         </Expand>
       </div>

@@ -7,12 +7,12 @@ const Expand = ({ children, onHide, isWisible, title }) => {
         <span className='expand__title'>{title}</span>
         <button onClick={onHide} className='expand__toggle-btn'>
           <i
-            style={isWisible ? null : { transform: 'rotate(180deg)' }}
-            className='fas fa-chevron-up'
+            style={isWisible ? { transform: 'rotate(180deg)' } : {}}
+            className='fas fa-chevron-down'
           ></i>
         </button>
       </div>
-        {children}
+      <div className='expand__content'>{children}</div>
     </div>
   );
 };
