@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const Expand = ({ children, onHide, isWisible, title }) => {
   return (
@@ -13,17 +13,17 @@ const Expand = ({ children, onHide, isWisible, title }) => {
           ></i>
         </button>
       </div>
-      <div className='expand__content'>{children}</div>
+      {isWisible ? <div className='expand__content'>{children}</div> : null}
     </div>
   );
 };
 
 Expand.propTypes = {
-  isWisible: PropTypes.bool
-}
+  isWisible: PropTypes.bool,
+};
 
 Expand.defaultProps = {
-  isWisible: false
-}
+  isWisible: false,
+};
 
 export default Expand;
