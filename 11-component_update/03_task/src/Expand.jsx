@@ -13,7 +13,7 @@ const Expand = ({ children, onHide, isWisible, title }) => {
           ></i>
         </button>
       </div>
-      {isWisible ? <div className='expand__content'>{children}</div> : null}
+      <div className='expand__content'>{isWisible ? children : null}</div>
     </div>
   );
 };
