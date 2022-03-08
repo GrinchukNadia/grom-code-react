@@ -19,7 +19,6 @@ class TasksList extends React.Component {
   };
 
   onCreate = (text) => {
-    console.log(text)
     const newTask = {
       text: text,
       createDate: new Date(),
@@ -29,7 +28,7 @@ class TasksList extends React.Component {
     createTask(newTask).then(() => this.fetchTasks());
   };
 
-  handleTaskDoneStatus = (id) => {
+  handleTaskStatusChange = (id) => {
     const { done, text, createDate } = this.state.tasks.find(
       (task) => task.id === id
     );
@@ -56,8 +55,8 @@ class TasksList extends React.Component {
             <Task
               key={task.id}
               {...task}
-              onChange={this.handleTaskDoneStatus}
               onDelete={this.handleDelete}
+              onChange={this.handleTaskStatusChange}
             />
           ))}
         </ul>
