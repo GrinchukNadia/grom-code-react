@@ -19,6 +19,7 @@ class TasksList extends React.Component {
   };
 
   onCreate = (text) => {
+    console.log(text)
     const newTask = {
       text: text,
       createDate: new Date(),

@@ -1,11 +1,11 @@
 const url = 'https://61eaff907ec58900177cdb49.mockapi.io/api/v1/tasks';
 
 export const createTask = (taskData) => {
-  console.log(taskData)
+  console.log(taskData);
   return fetch(url, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json; utc-8',
+      'Content-Type': 'application/json; charset=utf-8',
     },
     body: JSON.stringify(taskData),
   }).then((response) => {
@@ -22,21 +22,19 @@ export const fetchTasksList = () => {
         return res.json();
       }
     })
-    .then((tasksList) =>{
-      console.log(tasksList)
+    .then((tasksList) => {
       return tasksList.map(({ _id, ...task }) => ({
         id: _id,
         ...task,
-      }))
+      }));
     });
 };
 
 export const updateTask = (taskId, taskData) => {
-  console.log(taskData)
   return fetch(`${url}/${taskId}`, {
     method: 'PUT',
     headers: {
-      'Content-Type': 'application/json; utc-8',
+      'Content-Type': 'application/json; charset=utf-8',
     },
     body: JSON.stringify(taskData),
   }).then((response) => {
@@ -54,4 +52,4 @@ export const deleteTask = (id) => {
       throw new Error('Failed to delete task');
     }
   });
-}
+};
