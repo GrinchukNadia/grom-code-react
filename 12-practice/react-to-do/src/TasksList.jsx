@@ -1,7 +1,7 @@
 import React from 'react';
 import Task from './Task.jsx';
 import CreateTaskInput from './CreateTaskInput.jsx';
-import { createTask, fetchTasksList, updateTask, deleteTask } from './tasksGateway.js';
+import { createTask, fetchTasksList, updateTask, deleteTask } from './TasksGateway.jsx';
 
 class TasksList extends React.Component {
   state = {
@@ -20,11 +20,11 @@ class TasksList extends React.Component {
 
   onCreate = (text) => {
     const newTask = {
-      text: text,
+      text,
       done: false,
     };
 
-    createTask(newTask).then(() => this.fetchTasks());
+    return createTask(newTask).then(() => this.fetchTasks());
   };
 
   handleTaskStatusChange = (id) => {
@@ -35,7 +35,6 @@ class TasksList extends React.Component {
       text,
       done: !done,
     };
-
     updateTask(id, updatedTasks).then(() => this.fetchTasks());
   };
 

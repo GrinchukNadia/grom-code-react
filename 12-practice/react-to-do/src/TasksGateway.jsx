@@ -4,7 +4,7 @@ export const createTask = (taskData) => {
   return fetch(url, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json;charset=utf-8',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(taskData),
   }).then((response) => {
@@ -33,12 +33,12 @@ export const updateTask = (taskId, taskData) => {
   return fetch(`${url}/${taskId}`, {
     method: 'PUT',
     headers: {
-      'Content-Type': 'application/json;charset=utf-8',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(taskData),
   }).then((response) => {
     if (!response.ok) {
-      throw new Error('Failed to create task');
+      throw new Error('Failed to update task');
     }
   });
 };
