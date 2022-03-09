@@ -43,12 +43,12 @@ class TasksList extends React.Component {
   };
 
   render() {
-    const tasks = this.state.tasks.slice().sort((a, b) => a.done - b.done);
+    const sortedList = this.state.tasks.slice().sort((a, b) => a.done - b.done);
     return (
       <main className='todo-list'>
         <CreateTaskInput onCreate={this.onCreate} />
         <ul className='list'>
-          {tasks.map((task) => (
+          {sortedList.map((task) => (
             <Task
               key={task.id}
               {...task}

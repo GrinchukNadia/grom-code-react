@@ -2,19 +2,19 @@ import React from 'react';
 
 class CreateTaskInput extends React.Component {
   state = {
-    inputValue: '',
+    value: '',
   };
 
-  handleChange = (e) => {
+  handleChange = (event) => {
     this.setState({
-      inputValue: e.target.value,
+      value: event.target.value,
     });
   };
-  
+
   handleTaskCreate = () => {
-    this.props.onCreate(this.state.inputValue)
-    this.setState({inputValue: ''})
-  }
+    this.props.onCreate(this.state.value);
+    this.setState({ value: '' });
+  };
 
   render() {
     return (
@@ -22,10 +22,15 @@ class CreateTaskInput extends React.Component {
         <input
           className='create-task__input'
           type='text'
-          value={this.state.inputValue}
+          value={this.state.value}
           onChange={this.handleChange}
         />
-        <button onClick={this.handleTaskCreate} className='btn create-task__btn'>Create</button>
+        <button
+          onClick={this.handleTaskCreate}
+          className='btn create-task__btn'
+        >
+          Create
+        </button>
       </div>
     );
   }

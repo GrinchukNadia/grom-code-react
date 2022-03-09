@@ -12,7 +12,7 @@ const TasksList = ({ text, done, id, onChange, onDelete }) => {
         defaultChecked={done}
         type='checkbox'
         className='list-item__checkbox'
-        onClick={() => onChange(id)}
+        onChange={() => onChange(id)}
       />
       <span className='list-item__text'>{text}</span>
       <button
