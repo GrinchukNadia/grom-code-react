@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const url = 'https://api.github.com/users';
-const User = ({ match }) => {
+const User = () => {
   const [userData, onDataSet] = useState(null);
-  const { userId } = useParams()
+  const { userId } = useParams();
 
   useEffect(() => {
     fetch(`${url}/${userId}`)

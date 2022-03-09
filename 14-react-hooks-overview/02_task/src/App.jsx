@@ -1,33 +1,34 @@
 import React from 'react';
 import './index.scss';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
-import Home from './Home.jsx';
-import Users from './Users.jsx';
+import User from './User.jsx';
 
 const App = () => {
   return (
-    <>
+    <div className='page'>
       <BrowserRouter>
-        <div className='page'>
+        <div className='page__content'>
+          <h1>Users</h1>
           <ul className='navigation'>
             <li className='navigation__item'>
-              <Link to='/'>Home</Link>
+              <Link to='/users/github'>Github</Link>
             </li>
             <li className='navigation__item'>
-              <Link to='/users'>Users</Link>
+              <Link to='/users/facebook'>Facebook</Link>
             </li>
           </ul>
+
           <Switch>
-            <Route exact path={'/'}>
-              <Home />
+            <Route path='/users/:userId' >
+              <User />
             </Route>
-            <Route path={'/users'}>
-              <Users />
+            <Route path='/'>
+              <span>Select a user please</span>
             </Route>
           </Switch>
         </div>
       </BrowserRouter>
-    </>
+    </div>
   );
 };
 
