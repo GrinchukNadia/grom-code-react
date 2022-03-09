@@ -26,7 +26,7 @@ const TasksList = ({ text, done, id, onChange, onDelete }) => {
 TasksList.propTypes = {
   text: PropTypes.string.isRequired,
   done: PropTypes.bool.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default TasksList;

@@ -21,7 +21,6 @@ class TasksList extends React.Component {
   onCreate = (text) => {
     const newTask = {
       text: text,
-      createDate: new Date(),
       done: false,
     };
 
@@ -29,13 +28,12 @@ class TasksList extends React.Component {
   };
 
   handleTaskStatusChange = (id) => {
-    const { done, text, createDate } = this.state.tasks.find(
+    const { done, text } = this.state.tasks.find(
       (task) => task.id === id
     );
     const updatedTasks = {
       text,
       done: !done,
-      createDate,
     };
 
     updateTask(id, updatedTasks).then(() => this.fetchTasks());
